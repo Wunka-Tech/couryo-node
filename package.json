@@ -1,0 +1,58 @@
+{
+  "name": "@couryo/node",
+  "version": "0.1.0",
+  "description": "Official Node.js SDK for the Couryo email API: typed, with retries, automatic Idempotency-Key and webhook verification.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "README.pt-BR.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20.3"
+  },
+  "keywords": [
+    "couryo",
+    "email",
+    "transactional email",
+    "smtp",
+    "webhooks"
+  ],
+  "homepage": "https://couryo.com/docs/sdks",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wunka-Tech/couryo-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Wunka-Tech/couryo-node/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src test",
+    "test": "vitest run",
+    "gen:types": "node scripts/gen-types.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@types/node": "^22.16.5",
+    "eslint": "^9.32.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.38.0",
+    "vitest": "^3.2.4",
+    "@couryo/contract": "workspace:*"
+  }
+}
